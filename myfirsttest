@@ -1,0 +1,86 @@
+package selenium1;
+
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import java.time.Duration;
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.ui.Select;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class ElevenD {
+
+	public static void main(String[] args) throws InterruptedException {
+		// TODO Auto-generated method stub
+		ChromeOptions cc_options = new ChromeOptions();
+		WebDriverManager.chromedriver().setup();
+		WebDriver driver = new ChromeDriver(cc_options);
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+
+		driver.get("https://beta.eleven.sa/");
+		Thread.sleep(5000);
+		driver.manage().window().maximize();
+		driver.findElement(By.cssSelector("input[id*='react-select-4-input']")).click(); 
+		Thread.sleep(5000);
+		 WebElement itemToSelect = driver.findElement(By.cssSelector("div[id='react-select-4-listbox']"));
+	        itemToSelect.click();
+	        Thread.sleep(5000);
+	        driver.findElement(By.cssSelector("button[class='ui fluid button']")).click();
+			/*
+			 * driver.findElement(By.cssSelector("a[class='ui button']")).click();
+			 * driver.findElement(By.cssSelector("input[placeholder='Email']")).sendKeys(
+			 * "nsuppliers7@gmail.com");
+			 * driver.findElement(By.cssSelector("input[placeholder='Password']")).sendKeys(
+			 * "123465");
+			 * driver.findElement(By.cssSelector("button[class='ui fluid button']")).click()
+			 * ; Thread.sleep(5000);
+			 * driver.findElement(By.linkText("Cleaning Solutions")).click();
+			 * Thread.sleep(5000); driver.findElement(By.linkText("National")).click();
+			 * Thread.sleep(5000); driver.findElement(By.linkText("Office chair")).click();
+			 * Thread.sleep(5000);
+			 * driver.findElement(By.cssSelector("p[class='sc-ece025cd-1 dPKRpk']")).click()
+			 * ; driver.findElement(By.linkText("Logout")).click();
+			 */
+	       Thread.sleep(5000);
+	       driver.findElement(By.linkText("Sign in")).click();
+	       Thread.sleep(5000);
+	       driver.findElement(By.cssSelector("input[placeholder='Email']")).sendKeys("fathimathsajidamp1@gmail.com");
+	       driver.findElement(By.cssSelector("input[placeholder='Password']")).sendKeys("123465");
+	       driver.findElement(By.cssSelector("button[class='ui fluid button']")).click();
+	       Thread.sleep(5000);
+	       driver.findElement(By.linkText("Cleaning Solutions")).click();
+	       Thread.sleep(5000);
+	       driver.findElement(By.linkText("National")).click();
+	       Thread.sleep(5000);
+	       driver.findElement(By.linkText("Office chair")).click();
+	       Thread.sleep(5000);
+	       driver.findElement(By.cssSelector("button[class='ui fluid button']")).click();
+	       Thread.sleep(5000);
+			
+			 driver.findElement(By.cssSelector("div[class='sc-53f520b0-1 djpWFS']")).click();
+			 Thread.sleep(5000);
+			 driver.findElement(By.cssSelector("div[class='sc-53f520b0-0 cNPbpQ']")).click();
+			 Thread.sleep(5000);
+				/*
+				 * driver.findElement(By.
+				 * cssSelector("button[class='scssSelectoc-53f520b0-1 djpWFS']")).click();
+				 * Thread.sleep(5000);
+				 */
+	       driver.findElement(By.id("cardNoInput")).sendKeys("4111111111111111");
+	       Thread.sleep(5000);
+	       driver.findElement(By.id("expDateInput")).sendKeys("05/24");
+	       Thread.sleep(5000);
+	       driver.findElement(By.id("cvvInput")).sendKeys("123");
+	       Thread.sleep(5000);
+	       driver.findElement(By.id("chNameInput")).sendKeys("Sajida");
+	       Thread.sleep(5000);
+	       driver.findElement(By.id("submitBtn")).click();
+	}
+
+}
